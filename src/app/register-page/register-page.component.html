@@ -1,0 +1,95 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h1>Reactive Form</h1>
+  <p>Create Form & Validation</p>
+</div>
+<div class="row">
+  <div class="col-8">
+    <form class="row g-3" [formGroup]="registerForm">
+      <div class="col md-4">
+        <label class="form-label">Name</label>
+        <input type="text" formControlName="name" class="form-control" />
+        <div class="text-danger">
+          @if(registerForm.controls['name'].touched && registerForm.controls['name'].errors?.['required']){
+          <span>Should not be empty</span>
+          }@else if (registerForm.controls['name'].errors?.['minLength']){
+          <span>Min char 5 required</span>
+          }
+        </div>
+      </div>
+
+      <div class="col md-4">
+        <label class="form-label">Adress</label>
+        <input type="text" formControlName="address" class="form-control" />
+        <div class="text-danger">
+          @if(registerForm.controls['address'].touched &&registerForm.controls['address'].errors?.['required']){
+          <span>Should not be empty</span>
+          }@else if (registerForm.controls['address'].errors?.['minLength']){
+          <span>Min char 10required</span>
+          }
+        </div>
+      </div>
+
+      <div class="col md-4">
+        <label class="form-label">Email</label>
+        <input type="text" formControlName="email" class="form-control" />
+        <div class="text-danger">
+          @if(registerForm.controls['email'].touched &&registerForm.controls['email'].errors?.['required']){
+          <span>Should not be empty</span>
+          }@else if (registerForm.controls['email'].errors?.['email']){
+          <span>Email is not valid</span>
+          }
+        </div>
+      </div>
+
+      <div class="col md-4">
+        <label class="form-label">Password</label>
+        <input type="text" formControlName="password" class="form-control" />
+        <div class="text-danger">
+          @if(registerForm.controls['password'].touched && registerForm.controls['password'].errors?.['required']){
+          <span>Should not be empty</span>
+          }@else if (registerForm.controls['password'].errors?.['minLength']){
+          <span>Min char 5 required</span>
+          }
+        </div>
+      </div>
+
+      <div class="col md-4">
+        <label class="form-label">Confirm Password</label>
+        <input
+          type="text"
+          formControlName="confirmPassword"
+          class="form-control"
+        />
+        <div class="text-danger">
+          @if(registerForm.controls['confirmPassword'].touched &&registerForm.controls['confirmPassword'].errors?.['required']){
+          <span>Should not be empty</span>
+          }@else if
+          (registerForm.controls['confirmPassword'].errors?.['minLength']){
+          <span>Min char 5 required</span>
+          }
+        </div>
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-secondary mt-2" type="button" text="Register">
+          Reset Form
+        </button>
+        <button
+          class="btn btn-primary mt-2"
+          type="button"
+          text="Register"
+          (click)="submit()"
+        >
+          Submit
+        </button>
+      </div>
+
+      <div class="login">
+        Already a user? &nbsp;
+        <a routerLink="/login" [queryParams]="{ returnUrl: returnUrl }">
+          Login Here
+        </a>
+      </div>
+    </form>
+  </div>
+</div>

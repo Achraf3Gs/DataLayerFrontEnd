@@ -1,0 +1,41 @@
+<app-article-nav-bar></app-article-nav-bar>
+<form (ngSubmit)="updateArticle()">
+  <div class="form-group">
+    <label for="articleLabel"> Article Label </label>
+    <input
+      [(ngModel)]="label"
+      name="articleLabel"
+      size="20"
+      type="text"
+      class="form-control"
+      id="articleLabel"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="articlePrice"> Article Price </label>
+    <input
+      [(ngModel)]="price"
+      name="articlePrice"
+      size="20"
+      type="text"
+      class="form-control"
+      id="articlePrice"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="articlePicture"> Article Picture </label>
+    <input
+      [(ngModel)]="picture"
+      name="articlePicture"
+      size="20"
+      type="text"
+      class="form-control"
+      id="articlePicture"
+    />
+  </div>
+  <input [(ngModel)]="id" name="articleId" type="hidden" />
+  <input [(ngModel)]="providerId" name="providerId" type="hidden" />
+  <button class="btn btn-primary">Mise à jours</button>
+</form>

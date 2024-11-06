@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand">Articles</a>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a
+        class="nav-item nav-link"
+        routerLink="/listArticle"
+        routerLinkActive="active"
+        >Liste</a
+      >
+      <a
+        class="nav-item nav-link"
+        routerLink="/addArticle"
+        routerLinkActive="active"
+        >Ajouter</a
+      >
+    </div>
+  </div>
+  <button (click)="logOut()">Log Out</button>
+</nav>
+<router-outlet></router-outlet>

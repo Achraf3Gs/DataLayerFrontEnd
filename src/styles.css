@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+:root {
+  --global-margin: 20px;
+}
+
+body {
+  margin: var(--global-margin);
+}

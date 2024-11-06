@@ -1,0 +1,22 @@
+<app-article-nav-bar></app-article-nav-bar>
+<form #myform="ngForm" (ngSubmit)="createArticle(myform)">
+   <div class="form-group">
+    <label for="articleProviderId"> Article ProviderId </label>
+    <input ngModel name="articleProviderId" size="20" type="text" class="form-control" id="articleProviderId" />
+  </div>
+  <div class="form-group">
+    <label for="articleLabel"> Article Label</label>
+    <input ngModel name="articleLabel" size="20" type="text" class="form-control" id="articleLabel" />
+  </div>
+
+  <div class="form-group">
+    <label for="articlePrice"> Article Price </label>
+    <input ngModel name="articlePrice" size="20" type="text" class="form-control" id="articlePrice" />
+  </div>
+
+  <div class="form-group">
+    <label for="articlePicture"> Article Picture </label>
+    <input ngModel name="articlePicture" size="20" type="text" class="form-control" id="articlePicture" />
+  </div>
+  <button class="btn btn-primary">Ajouter</button>
+</form>
